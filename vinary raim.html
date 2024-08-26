@@ -1,0 +1,46 @@
+Para crear un enlace que, al abrirlo, llene la pantalla con unos y ceros de manera infinita, puedes utilizar un archivo HTML con un script en JavaScript. A continuación te doy el código necesario:
+
+1. **Crea un archivo HTML** (por ejemplo, `binary.html`) con el siguiente contenido:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Rain</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: monospace;
+            font-size: 20px;
+            white-space: pre;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function generateBinary() {
+            return Math.random() < 0.5 ? '0' : '1';
+        }
+
+        function fillScreenWithBinary() {
+            document.body.textContent += generateBinary();
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        setInterval(fillScreenWithBinary, 50);
+    </script>
+</body>
+</html>
+```
+
+2. **Sube el archivo a un servidor web** o **utiliza una plataforma de hosting** que te permita acceder al archivo mediante un enlace. Si no tienes un servidor web, puedes usar servicios como GitHub Pages para subir el archivo y obtener un enlace.
+
+3. **Comparte el enlace** a tu archivo HTML. Al abrirlo, llenará la pantalla de unos y ceros de manera infinita.
+
+Este script hace que la pantalla se llene de unos y ceros de manera constante, simulando un "efecto de lluvia de números" similar al de la película *Matrix*.
